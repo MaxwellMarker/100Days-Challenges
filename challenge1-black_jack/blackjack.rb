@@ -124,6 +124,32 @@ while playing
   house.add_card the_deck.get_card
   player.add_card the_deck.get_card
   house.add_card the_deck.get_card
+  # give player choice of taking another card
+  hitting = true
+  while hitting
+    print "This is your current hand: "
+    player.hand.each do |card|
+      print "#{card[:face]} "
+    end
+    puts
+    if player.count_hand > 20
+      hitting = false
+      break
+    end
+    print 'Would you like another card? ( y / n ) '
+    hit_answer = gets.chomp
+    if hit_answer.downcase == 'n'
+      hitting = false
+    else
+      player.add_card the_deck.get_card
+      if house.count_hand < 18
+        house.add_card the_deck.get_card
+      end
+    end
+  end
+  if house.count_hand < 11
+    house.add_card the_deck.get_card
+  end
   # compare computer hand count to player hand count
   player_count = player.count_hand
   house_count = house.count_hand
