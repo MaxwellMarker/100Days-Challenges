@@ -1,0 +1,9 @@
+There are 100 Goblins suffering from acid reflux, and you are a sadistic Goblin doctor with the cure. You want to torture the Goblins with a little game.
+
+You line up all the Goblins and give each of them the cure in turn, all 100 Goblins.
+
+But then you start from the beginning of the line and go over them a second time, removing the cure for every second Goblin, starting with the second Goblin.
+
+Then you do it a third time for every third Goblin, starting at the third Goblin: if the Goblin you now administer was previously cured, they are now uncured, and if the Goblin was uncured, they are now cured. You do it a fourth time, and go to every fourth Goblin starting with the fourth. The fifth time, you go to every fifth Goblin starting with the fifth ....
+
+After you have gone down the line of Goblins 100 times, which Goblins are cured at the end?
