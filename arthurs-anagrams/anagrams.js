@@ -8,9 +8,8 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 const formatString = (string) => {
-  let output = string.replace(/[^\w\s]|/g, "");
-  let output2 = output.replace(/ /g, "");
-  return output2;
+  let output = string.replace(/[^\w]|/g, "");
+  return output;
 };
 const sorter = (a, b) => {
   if (a > b) {
