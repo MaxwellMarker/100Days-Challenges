@@ -24,17 +24,16 @@ const sorter = (a, b) => {
 const checkAnagram = (string1, string2) => {
   let arr1 = formatString(string1).toLowerCase().split("");
   let arr2 = formatString(string2).toLowerCase().split("");
-  const sortedArr1 = arr1.sort(sorter);
-  const sortedArr2 = arr2.sort(sorter);
-  const final1 = sortedArr1.join("");
-  const final2 = sortedArr2.join("");
-  console.log(final1, final2, arr1, arr2);
-  if (final1 === final2) {
+  arr1 = arr1.sort(sorter);
+  arr2 = arr2.sort(sorter);
+  arr1 = arr1.join("");
+  arr2 = arr2.join("");
+  if (arr1 === arr2) {
     return true;
   } else {
     return false;
   }
 };
-checkAnagram("rail safety", "fairy tales");
-checkAnagram("RAIL! SAFETY!", "fairy tales");
-checkAnagram('Hi there', 'Bye there')
+console.log(checkAnagram("rail safety", "fairy tales"));
+console.log(checkAnagram("RAIL! SAFETY!", "fairy tales"));
+console.log(checkAnagram('Hi there', 'Bye there'));
