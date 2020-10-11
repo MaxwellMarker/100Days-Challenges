@@ -2,7 +2,6 @@ const paintColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'blac
 
 const calculateColor = (daysSinceStart, daysOut) => {
     const sinceProdStart = daysSinceStart + daysOut;
-    console.log(sinceProdStart)
     if (sinceProdStart % 7 === 5 || sinceProdStart % 7 === 6) {
         return "no cars today";
     };
@@ -23,8 +22,4 @@ const calculateColor = (daysSinceStart, daysOut) => {
     return paintColors[colorIndex];
 }
 
-console.log(calculateColor(0, 30));
-console.log(calculateColor(1, 1));
-console.log(calculateColor(1, 2));
-console.log(calculateColor(1, 3));
-console.log(calculateColor(1, 4));
+console.log(calculateColor(0, 1));
