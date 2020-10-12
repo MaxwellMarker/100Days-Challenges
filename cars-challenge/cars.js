@@ -13,13 +13,26 @@ const calculateColor = (daysSinceStart, daysOut) => {
             workingDays++;
         };
     };
-    console.log(workingDays)
     let colorIndex = (workingDays % 7) - 1;
     if (colorIndex < 0) {
         colorIndex += 7
     }
-    console.log(colorIndex)
     return paintColors[colorIndex];
 }
-
+console.log(calculateColor(0, 0));
 console.log(calculateColor(0, 1));
+console.log(calculateColor(0, 2));
+console.log(calculateColor(0, 3));
+console.log(calculateColor(0, 4));
+console.log(calculateColor(0, 5));
+console.log(calculateColor(0, 6));
+console.log(calculateColor(0, 7));
+console.log(calculateColor(0, 8));
+console.log(calculateColor(0, 9));
+console.log(calculateColor(0, 10));
+console.log(calculateColor(0, 11));
+console.log(calculateColor(0, 12));
+console.log(calculateColor(0, 13));
+console.log(calculateColor(0, 14));
+console.log(calculateColor(0, 15));
+console.log(calculateColor(0, 16));
