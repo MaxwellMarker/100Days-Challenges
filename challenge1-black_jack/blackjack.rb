@@ -132,22 +132,26 @@ while playing
       print "#{card[:face]} "
     end
     puts
-    if player.count_hand > 20
+    if player.count_hand > 20 or house.count_hand > 20
       hitting = false
       break
     end
     print 'Would you like another card? ( y / n ) '
     hit_answer = gets.chomp
+    puts
     if hit_answer.downcase == 'n'
       hitting = false
     else
       player.add_card the_deck.get_card
-      if house.count_hand < 18
+      if house.count_hand < 18 and player.count_hand < 22
         house.add_card the_deck.get_card
       end
     end
   end
-  if house.count_hand < 11
+  if house.count_hand < player.count_hand and player.count_hand < 22
+    house.add_card the_deck.get_card
+  end
+  if house.count_hand < player.count_hand and player.count_hand < 22
     house.add_card the_deck.get_card
   end
   # compare computer hand count to player hand count
@@ -177,9 +181,21 @@ while playing
     player.lose
     house.win
   end
-  p "Would you like to play again? ( y / n )"
-  answer = gets.chomp
-  if answer.downcase == "n"
+  if player.bankroll <= 0
+    puts
+    p "You went bankrupt so you have lost the game."
     playing = false
+  elsif house.bankroll <= 0
+    puts
+    p "The house has run out of money so you have won the game"
+    playing = false
+  else
+    puts
+    p "You have #{player.bankroll} in the bank and the house has #{house.bankroll}"
+    p "Would you like to continue playing? ( y / n )"
+    answer = gets.chomp
+    if answer.downcase == "n"
+      playing = false
+    end
   end
 end
