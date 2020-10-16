@@ -192,9 +192,11 @@ while playing
   else
     puts
     p "You have #{player.bankroll} in the bank and the house has #{house.bankroll}"
-    p "Would you like to continue playing? ( y / n )"
+    print "Would you like to continue playing? ( y / n ) "
     answer = gets.chomp
+    puts
     if answer.downcase == "n"
+      puts "Thanks for playing."
       playing = false
     end
   end
