@@ -148,6 +148,7 @@ while playing
       end
     end
   end
+  # give the house more cards if they are losing
   if house.count_hand < player.count_hand and player.count_hand < 22
     house.add_card the_deck.get_card
   end
