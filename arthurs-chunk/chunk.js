@@ -9,5 +9,22 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 const chunk = (array, size) => {
-    
+    let finalArr = [];
+    const arrayQuantity = Math.ceil(array.length/size);
+    for(let i = 0; i < arrayQuantity; i++){
+        let subArr = [];
+        if(size >= array.length){
+            subArr = array
+        }else{
+            for(let i = 0; i < size; i++){
+                subArr.push(array.shift())
+            }
+        }
+        finalArr[i] = subArr
+    }
+    return finalArr;
 }
+
+console.log(chunk([1, 2, 3, 4, 5], 2))
+console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8], 3))
+console.log(chunk([1, 2, 3, 4, 5], 10))
