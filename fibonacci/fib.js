@@ -18,4 +18,4 @@ const fib = (n) => {
     return curNum
 }
 
-console.log(fib(0), fib(5), fib(6))
+console.log(fib(1), fib(2), fib(4), fib(5), fib(6))
