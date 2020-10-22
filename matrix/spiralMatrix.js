@@ -24,19 +24,60 @@ const matrix = (n) => {
     for( let i = 0 ; i < n ; i++ ){
         spiMat.push([])
     }
-    const center = Math.floor(n/2)
+    let yEnd = Math.floor(n/2);
+    let xEnd = Math.ceil(n/2)-1;
+    let x = -1;
+    let y = 0;
     let offset;
     if(n % 2 === 0){
         offset = 1
     }else{
         offset = 0
     }
-    for( let i = (0 + offset) ; i < (center + offset) ; i++ ){
-        for( let x = 0 ; x <= i ; x++ ){
-            const index = (center+i-1);
-            spiMat[index].push(nums.pop())
+    for(let i = 0 ; i < yEnd + 1 ; i++){
+        for( let a = (0 + i*2) ; a < n ; a++ ){
+            if(nums.length < 1){
+                null
+            }else{
+                x++
+                spiMat[y][x] = nums.shift()
+            }
+        }
+        for( let a = (1 + i*2) ; a < n ; a++ ){
+            if(nums.length < 1){
+                null
+            }else{
+                y++
+                spiMat[y][x] = nums.shift()
+            }
+        }
+        for( let a = (1 + i*2) ; a < n ; a++ ){
+            if(nums.length < 1){
+                null
+            }else{
+                x--
+                spiMat[y][x] = nums.shift()
+            }
+        }
+        for( let a = (2 + i*2) ; a < n ; a++ ){
+            if(nums.length < 1){
+                null
+            }else{
+                y--
+                spiMat[y][x] = nums.shift()
+            }
         }
     }
-    console.log(spiMat)
+    spiMat.forEach((item)=>{
+        console.log(item)
+    })
 }
 matrix(2)
+matrix(3)
+matrix(4)
+matrix(5)
+matrix(6)
+matrix(7)
+matrix(8)
+matrix(9)
+matrix(10)
