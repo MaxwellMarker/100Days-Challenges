@@ -71,6 +71,7 @@ const matrix = (n) => {
     spiMat.forEach((item)=>{
         console.log(item)
     })
+    return(spiMat)
 }
 matrix(2)
 matrix(3)
