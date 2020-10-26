@@ -22,3 +22,4 @@ const palindrome = (str) => {
 }
 console.log(palindrome("abba"))
 console.log(palindrome("abcdefg"))
+console.log(palindrome("racecar"))
