@@ -7,4 +7,17 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-const vowels = (str) => {}
+const vowels = (str) => {
+    let letters = str.split('');
+    let vowelCount = 0;
+    letters.forEach((char) => {
+        const x = char.toLowerCase()
+        if(x === 'a' || x === 'e' || x === 'i' || x === 'o' || x === 'u'){
+            vowelCount++;
+        }
+    })
+    return vowelCount;
+}
+
+console.log(vowels('Baked Alaska'));
+console.log(vowels('Why do you ask?'));
